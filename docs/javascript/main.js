@@ -1,5 +1,10 @@
 function setup(){
-    $('.browserpage').hide();    
+  
+    //force page refresh every 30 mins
+    setTimeout('window.location.reload()', 1800000);
+  
+    //setup page rotation
+    $('.browserpage').hide();
     change_page();
 }
 
@@ -7,7 +12,7 @@ function change_page(){
     
     //work out which page we are on
     var current_page = -1;
-    
+
     for (var i=0; i < $('.browserpage').length; i++) {
         if($(".browserpage:eq(" + i + ")").is(':visible')){
             current_page = i;
